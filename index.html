@@ -2,17 +2,14 @@
 <html>
     <head>
         <title>3.地図上に多くのピンを立てる</title>
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
             integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-            crossorigin=""
-        />
-        <script
-            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""
-        ></script>
+        >
+        </script>
     </head>
     <body>
           <h1>地図上に多くのピンを立てる</h1>
@@ -27,7 +24,8 @@
                 {
                     maxZoom: 19,
                     attribution:
-                        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                        '&copy; 
+                        <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                 },
             );
             map.addLayer(backgroundLayer);
@@ -43,8 +41,7 @@
                        // GeoJSONレイヤーを作成
         L.geoJSON(json, {
             onEachFeature: function (feature, layer) {
-                var pop = "<strong>学校情報</strong><br>" +
-                    "<strong>学校名:</strong> " + feature.properties.P29_004 + "<br>" +
+                var pop = "<strong>学校情報</strong><br>" +"<strong>学校名:</strong> " + feature.properties.P29_004 + "<br>" +
                     "<strong>住所:</strong> " + feature.properties.P29_005 + "<br>" +
                     "<strong>市町村コード:</strong> " + feature.properties.P29_001 + "<br>" +
                     "<strong>学校コード:</strong> " + feature.properties.P29_002 + "<br>" +
@@ -52,7 +49,8 @@
                 
                 layer.bindPopup(pop);
             },
-        }).addTo(map);
+        })
+            .addTo(map);
                 });
         </script>
     </body>
